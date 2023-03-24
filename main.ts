@@ -11,10 +11,15 @@ input.onButtonPressed(Button.A,()=>{
 input.onButtonPressed(Button.B,()=>{
     basic.showString("aantal")
     basic.showNumber(aantalSprongen)
+
 })
 
-
-
 basic.forever(function () {
-	
+versnelling=input.acceleration(Dimension.Y)
+if (versnelling>1000){
+    aantalSprongen = aantalSprongen+1
+    basic.showIcon(IconNames.Yes)
+    basic.pause(100)
+    basic.clearScreen()
+}	
 })
